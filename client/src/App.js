@@ -52,7 +52,7 @@ function App() {
       <Router>
         <div>
           {/* TODO: replace 'StoreProvider' with 'Provider' from react-redux and add an attribute 'store' and assign the store variable as its value */}
-          <Provider>
+          <Provider store={store}>
             <Nav />
             <Switch>
               <Route exact path="/" component={Home} />
