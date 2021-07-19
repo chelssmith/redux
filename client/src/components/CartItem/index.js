@@ -1,11 +1,17 @@
 import React from 'react';
-import { useStoreContext } from "../../utils/GlobalState";
+
+//TODO: remove the line below for 'useStoreContext. We will use React-Redux to generate state and dispatch method
+import { useStoreContext } from '../../utils/GlobalState';
+//TODO: import { useDispatch } from 'react-redux';
+
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
 const CartItem = ({ item }) => {
-
-  const [, dispatch] = useStoreContext();
+ // TODO: remove the line below. We will use useDispatch and useSelector to generate state and dispatch
+ const [, dispatch] = useStoreContext();
+ // TODO: Create a const variable 'dispatch' and assign the returned value from useDispatch()
+ // Hint: search 28-Stu_Mini-Project for how to create the dispatch variable
 
   const removeFromCart = item => {
     dispatch({

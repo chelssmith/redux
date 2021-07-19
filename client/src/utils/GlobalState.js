@@ -1,3 +1,4 @@
+//TODO: this file is not being used after refactoring to Redux and should be removed from the folder
 import React, { createContext, useContext } from "react";
 import { useProductReducer } from './reducers'
 

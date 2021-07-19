@@ -1,14 +1,22 @@
-import React, { useEffect } from 'react';
-import ProductItem from '../ProductItem';
-import { useStoreContext } from '../../utils/GlobalState';
-import { UPDATE_PRODUCTS } from '../../utils/actions';
-import { useQuery } from '@apollo/client';
-import { QUERY_PRODUCTS } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
-import spinner from '../../assets/spinner.gif';
+import React, { useEffect } from "react";
+import ProductItem from "../ProductItem";
+
+//TODO: remove the line below for 'useStoreContext. We will use React-Redux to generate state and dispatch method
+import { useStoreContext } from "../../utils/GlobalState";
+//TODO: import { useDispatch, useSelector } from 'react-redux';
+
+import { UPDATE_PRODUCTS } from "../../utils/actions";
+import { useQuery } from "@apollo/client";
+import { QUERY_PRODUCTS } from "../../utils/queries";
+import { idbPromise } from "../../utils/helpers";
+import spinner from "../../assets/spinner.gif";
 
 function ProductList() {
+  // TODO: remove the line below. We will use useDispatch and useSelector to generate state and dispatch
   const [state, dispatch] = useStoreContext();
+  // TODO: Create a const variable 'dispatch' and assign the returned value from useDispatch()
+  // TODO: create a const varailbe 'state' and assign the returned value from useSelector(...)
+  // Hint: search 28-Stu_Mini-Project for how to create the two variables, dispatch and state
 
   const { currentCategory } = state;
 
@@ -21,10 +29,10 @@ function ProductList() {
         products: data.products,
       });
       data.products.forEach((product) => {
-        idbPromise('products', 'put', product);
+        idbPromise("products", "put", product);
       });
     } else if (!loading) {
-      idbPromise('products', 'get').then((products) => {
+      idbPromise("products", "get").then((products) => {
         dispatch({
           type: UPDATE_PRODUCTS,
           products: products,
