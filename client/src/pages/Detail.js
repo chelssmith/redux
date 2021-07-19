@@ -28,7 +28,8 @@ function Detail() {
   const dispatch = useDispatch ();
 
   // TODO: create a const varailbe 'state' and assign the returned value from useSelector(...)
-  const state = useSelector(...state);
+  // const state = useSelector(...state);
+  const state = useSelector((state) => state)
 
   // Hint: search 28-Stu_Mini-Project for how to create the two variables, dispatch and state
 
