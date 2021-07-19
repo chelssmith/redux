@@ -21,4 +21,6 @@ https://redux-chelsea.herokuapp.com/
 
 https://dashboard.heroku.com/apps/redux-chelsea
 
+https://youtu.be/W61xg-UNrwU (A demo video incase my Heroku is not cooperating)
+
 
